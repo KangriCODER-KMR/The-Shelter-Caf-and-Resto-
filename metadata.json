@@ -1,0 +1,6 @@
+{
+  "name": "The Shelter Cafe & Resto",
+  "description": "A sanctuary of taste and authentic Kashmiri hospitality in Kralgund, Handwara. Wazwan, Barista Brews, Pizzas, Sizzlers & Dining.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

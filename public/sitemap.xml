@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://thesheltercafe.com/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>The Shelter Cafe &amp; Resto — Kralgund, Handwara</image:title>
+      <image:caption>Warm, cozy mountain cafe interior with artisan woodwork and ambient light along Kupwara Highway</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thesheltercafe.com/#menu</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Authentic Kashmiri Wazwan &amp; Charcoal Tujje</image:title>
+      <image:caption>Traditional Kashmiri Wazwan Rogan Josh, Rista, and Charcoal-grilled Mutton Tujje</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Stone-Baked Artisanal Pizzas</image:title>
+      <image:caption>Hand-tossed sourdough pizza with mozzarella and mountain herbs</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Artisanal Barista Brews &amp; Saffron Kehwa</image:title>
+      <image:caption>Traditional Kashmiri Zafrani Kehwa brewed with pure saffron, green cardamom, and slivered almonds</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thesheltercafe.com/#dining</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Private Dining &amp; Family Lounge at The Shelter</image:title>
+      <image:caption>Intimate private dining spaces and family halls designed for celebrations, meetings, and relaxing meals</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>The Room — Acoustic Comfort &amp; Warm Aesthetic</image:title>
+      <image:caption>Warm amber lighting, botanical accents, and bespoke walnut furniture</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thesheltercafe.com/#gallery</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Restaurant Gallery — Ambience and Culinary Craft</image:title>
+      <image:caption>A visual journey through dining spaces, handcrafted mocktails, and sizzler presentations</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>Evening Twilight at The Shelter Cafe Kralgund</image:title>
+      <image:caption>Cozy evenings by the fireplace-inspired decor and warm terrace feel</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thesheltercafe.com/#reservation</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://thesheltercafe.com/#story</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thesheltercafe.com/#contact</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=1200&amp;q=80</image:loc>
+      <image:title>The Shelter Cafe Location Map in Kralgund Handwara</image:title>
+      <image:caption>Situated right along Kupwara Highway at Kralgund, Handwara, Jammu and Kashmir</image:caption>
+    </image:image>
+  </url>
+</urlset>

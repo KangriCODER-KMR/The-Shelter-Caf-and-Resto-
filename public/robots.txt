@@ -1,0 +1,6 @@
+# Robots.txt for The Shelter Cafe & Resto (Kralgund, Handwara)
+User-agent: *
+Allow: /
+
+# Sitemap Indexing
+Sitemap: https://thesheltercafe.com/sitemap.xml
