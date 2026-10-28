@@ -25,10 +25,9 @@
 | **Establishment** | The Shelter Restaurant & Café (Cafe & Resto) |
 | **Address** | Main Road, Kralgund Qaziabad, Handwara, Kupwara District, Jammu & Kashmir 193302 |
 | **Landmark** | Kralgund Market & Bridge along the Kupwara Highway Corridor |
-| **GPS Coordinates** | `34.3559051° N, 74.3483628° E` *(Decimal: 34.3559051, 74.3483628)* |
-| **Google Maps** | [Open in Google Maps](https://www.google.com/maps/place/The+Shelter+Cafe+%26+Resto/@34.3559051,74.3483628,17z) |
-| **Phone & Call Helpline** | **+91 95961 23022** *(095961 23022)* |
-| **WhatsApp Business** | **+91 95961 23022** |
+| **GPS Coordinates** | `**4.3559051° N, 74.348***8° E` *(Decimal: *4***59051, 74.3**3628)* |
+| **Phone & Call Helpline** | **+91 95961 ***2** *(095961 *****)* |
+| **WhatsApp Business** | **+91 95961 ***** |
 | **Official Email** | `theshelterresto@gmail.com` |
 | **Daily Operating Hours**| **09:30 AM – 10:30 PM** (Monday through Sunday) |
 | **Lunch Service** | 12:00 PM – 04:00 PM |
@@ -49,7 +48,7 @@
   - **In-Store Counter Pickup (Takeaway):** ₹0 (FREE | Ready in ~15 mins)
 
 ### 2. 💬 Direct WhatsApp Business Dispatch Engine
-- Generates a beautifully structured, itemized receipt sent straight to the restaurant owner's WhatsApp (`+91 95961 23022`).
+- Generates a beautifully structured, itemized receipt sent straight to the restaurant owner's WhatsApp (`+91 95961*****`).
 - Automatically calculates and lists:
   - Unique Order Ticket ID (e.g., `#SH-7294`)
   - Order Fulfillment Type (Doorstep Delivery vs. Counter Takeaway)
@@ -99,7 +98,7 @@
   - 🟡 **Reserve** (Warm Gold Jewel): Direct table and private cabin booking.
   - 🟣 **Ask AI** (Luminous Violet Jewel with Live Breathing Beacon): Instant AI Dining Concierge.
   - 🟢 **WhatsApp** (Emerald Jewel): Direct live WhatsApp chat with restaurant management.
-  - 🔷 **Call** (Teal Jewel): One-tap phone dialer to `+91 95961 23022`.
+  - 🔷 **Call** (Teal Jewel): One-tap phone dialer to `+91 95961 ****`.
 - **Top Navigation Bar:** Houses the official round restaurant seal, quick brand navigation, live bag counter badge with item count, and a comprehensive three-bar Menu drawer.
 - **All-Items Scrollable Menu Drawer:** Houses Order History, AI Concierge, Quick Actions, all section links, delivery rate table, PWA install prompts, and emergency phone contacts inside one smooth scroll container.
 
@@ -222,4 +221,4 @@ npm start
 
 ## 📄 License & Attribution
 - **Brand & Copyright:** © All rights reserved. **The Shelter Restaurant & Café**, Kralgund Qaziabad, Handwara, Jammu & Kashmir 193302.
-- **Hotline:** +91 95961 23022.
+- **Hotline:** +91 95961 ******.
