@@ -14,6 +14,82 @@
     <!-- Dev environment: gracefully handle benign Vite HMR proxy WebSocket disconnects -->
     <script>
       (function() {
+        try {
+          var NativeWebSocket = window.WebSocket;
+          if (NativeWebSocket) {
+            function isViteHmrReq(url, protocols) {
+              var u = String(url || '').toLowerCase();
+              var p = String(protocols || '').toLowerCase();
+              return p.indexOf('vite-hmr') !== -1 || u.indexOf('@vite/client') !== -1 || u.indexOf('token=') !== -1;
+            }
+
+            function MockViteWebSocket(url, protocols) {
+              if (!isViteHmrReq(url, protocols)) {
+                return new NativeWebSocket(url, protocols);
+              }
+              var target = new EventTarget();
+              target.url = url;
+              target.protocols = protocols;
+              target.readyState = 0; // CONNECTING
+              target.CONNECTING = 0;
+              target.OPEN = 1;
+              target.CLOSING = 2;
+              target.CLOSED = 3;
+              target.binaryType = 'blob';
+              target.bufferedAmount = 0;
+              target.extensions = '';
+              target.protocol = Array.isArray(protocols) ? protocols[0] : (protocols || '');
+              
+              target.send = function() {};
+              target.close = function(code, reason) {
+                target.readyState = 3; // CLOSED
+                var closeEv;
+                try {
+                  closeEv = new CloseEvent('close', { code: code || 1000, reason: reason || '', wasClean: true });
+                } catch (_) {
+                  closeEv = new Event('close');
+                  closeEv.code = code || 1000;
+                  closeEv.reason = reason || '';
+                  closeEv.wasClean = true;
+                }
+                target.dispatchEvent(closeEv);
+                if (typeof target.onclose === 'function') target.onclose(closeEv);
+              };
+
+              setTimeout(function() {
+                if (target.readyState === 0) {
+                  target.readyState = 1; // OPEN
+                  var openEv = new Event('open');
+                  target.dispatchEvent(openEv);
+                  if (typeof target.onopen === 'function') target.onopen(openEv);
+                }
+              }, 10);
+
+              return target;
+            }
+
+            MockViteWebSocket.CONNECTING = 0;
+            MockViteWebSocket.OPEN = 1;
+            MockViteWebSocket.CLOSING = 2;
+            MockViteWebSocket.CLOSED = 3;
+            MockViteWebSocket.prototype = NativeWebSocket.prototype;
+            window.WebSocket = MockViteWebSocket;
+          }
+        } catch (_) {}
+
+        try {
+          var origConsoleError = console.error;
+          console.error = function() {
+            var first = String(arguments[0] || '');
+            var second = arguments[1] ? String(arguments[1].message || arguments[1] || '') : '';
+            if (first.indexOf('[vite]') !== -1 && (first.indexOf('websocket') !== -1 || second.indexOf('WebSocket') !== -1 || second.indexOf('closed without opened') !== -1)) {
+              if (console.debug) console.debug.apply(console, arguments);
+              return;
+            }
+            return origConsoleError.apply(console, arguments);
+          };
+        } catch (_) {}
+
         function isViteHmrError(msg, src) {
           var s = (String(msg || '') + ' ' + String(src || '')).toLowerCase();
           return s.indexOf('websocket') !== -1 || s.indexOf('@vite/client') !== -1;
