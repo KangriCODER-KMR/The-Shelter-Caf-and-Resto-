@@ -11,6 +11,31 @@
     <meta name="application-name" content="The Shelter Cafe & Resto" />
     <meta name="format-detection" content="telephone=yes" />
 
+    <!-- Dev environment: gracefully handle benign Vite HMR proxy WebSocket disconnects -->
+    <script>
+      (function() {
+        function isViteHmrError(msg, src) {
+          var s = (String(msg || '') + ' ' + String(src || '')).toLowerCase();
+          return s.indexOf('websocket') !== -1 || s.indexOf('@vite/client') !== -1;
+        }
+        window.addEventListener('error', function(e) {
+          if (isViteHmrError(e.message, e.filename) || (e.error && isViteHmrError(e.error.message, e.error.stack))) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            return true;
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function(e) {
+          var reason = e.reason ? (e.reason.message || String(e.reason)) : '';
+          if (isViteHmrError(reason, '')) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+
     <title>The Shelter Cafe &amp; Resto — Kralgund Qaziabad, Handwara | Best Cafe, Pizzas &amp; Wazwan</title>
     
     <!-- Primary Local SEO & Nearby Discovery Metadata -->

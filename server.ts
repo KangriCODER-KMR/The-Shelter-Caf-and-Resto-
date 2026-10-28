@@ -222,8 +222,9 @@ async function startServer() {
     });
   } else {
     // In development, mount Vite dev server as middleware
+    // HMR is disabled in AI Studio proxy environment to prevent WebSocket disconnection errors
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: { middlewareMode: true, hmr: false },
       appType: 'spa',
     });
     app.use(vite.middlewares);
