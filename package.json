@@ -10,6 +10,7 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
+    "postinstall": "node scripts/patch-vite-hmr.mjs",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

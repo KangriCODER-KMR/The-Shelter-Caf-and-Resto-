@@ -30,7 +30,7 @@
               var target = new EventTarget();
               target.url = url;
               target.protocols = protocols;
-              target.readyState = 0; // CONNECTING
+              target.readyState = 1; // Immediately OPEN so Vite transport skips waiting and never rejects
               target.CONNECTING = 0;
               target.OPEN = 1;
               target.CLOSING = 2;
@@ -41,29 +41,18 @@
               target.protocol = Array.isArray(protocols) ? protocols[0] : (protocols || '');
               
               target.send = function() {};
-              target.close = function(code, reason) {
-                target.readyState = 3; // CLOSED
-                var closeEv;
-                try {
-                  closeEv = new CloseEvent('close', { code: code || 1000, reason: reason || '', wasClean: true });
-                } catch (_) {
-                  closeEv = new Event('close');
-                  closeEv.code = code || 1000;
-                  closeEv.reason = reason || '';
-                  closeEv.wasClean = true;
-                }
-                target.dispatchEvent(closeEv);
-                if (typeof target.onclose === 'function') target.onclose(closeEv);
+              target.close = function() {
+                target.readyState = 3;
               };
 
-              setTimeout(function() {
-                if (target.readyState === 0) {
-                  target.readyState = 1; // OPEN
+              // Trigger open asynchronously if listener was added
+              queueMicrotask(function() {
+                if (target.readyState === 1) {
                   var openEv = new Event('open');
                   target.dispatchEvent(openEv);
                   if (typeof target.onopen === 'function') target.onopen(openEv);
                 }
-              }, 10);
+              });
 
               return target;
             }
@@ -92,7 +81,7 @@
 
         function isViteHmrError(msg, src) {
           var s = (String(msg || '') + ' ' + String(src || '')).toLowerCase();
-          return s.indexOf('websocket') !== -1 || s.indexOf('@vite/client') !== -1;
+          return s.indexOf('websocket') !== -1 || s.indexOf('@vite/client') !== -1 || s.indexOf('closed without opened') !== -1;
         }
         window.addEventListener('error', function(e) {
           if (isViteHmrError(e.message, e.filename) || (e.error && isViteHmrError(e.error.message, e.error.stack))) {

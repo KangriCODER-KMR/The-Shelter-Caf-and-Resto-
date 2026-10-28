@@ -4,9 +4,11 @@ import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { patchViteClientFiles } from './scripts/patch-vite-hmr.mjs';
 
 dotenv.config();
 process.env.DISABLE_HMR = 'true';
+patchViteClientFiles();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
